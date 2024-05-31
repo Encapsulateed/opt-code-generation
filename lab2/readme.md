@@ -8,11 +8,12 @@ int main()
 }
 ```
 
-# Запуск
+# Зависимости
 ```
-clang++ `llvm-config --cxxflags --ldflags --libs core` -o main main.cpp
+pip install llvmlite
 ```
 
+# Запуск 
 ```
-./main
+python main.py
 ```
