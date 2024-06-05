@@ -1,0 +1,29 @@
+Program -> "int" "main" "(" ")" "{" StatementList "}" . 
+StatementList -> Statement StatementList . 
+StatementList -> . 
+Statement -> Declaration . 
+Statement -> Assignment . 
+Statement -> IfStatement . 
+Statement -> ForStatement . 
+Statement -> ReturnStatement . 
+Declaration -> "int" IDENT "=" Expression ";" . 
+Assignment -> IDENT "=" Expression ";" . 
+IfStatement -> "if" "(" Condition ")" "{" StatementList "}" "else" "{" StatementList "}" . 
+ForStatement -> "for" "(" Declaration Condition ";" Assignment ")" "{" StatementList "}" . 
+ReturnStatement -> "return" Expression ";" . 
+Expression -> Term ExpressionPrime . 
+ExpressionPrime -> "+" Term ExpressionPrime . 
+ExpressionPrime -> "-" Term ExpressionPrime . 
+ExpressionPrime -> "*" Term ExpressionPrime . 
+ExpressionPrime -> "/" Term ExpressionPrime . 
+ExpressionPrime -> . 
+Term -> NUMBER . 
+Term -> IDENT . 
+Term -> "(" Expression ")" . 
+Condition -> Expression ComparisonOperator Expression . 
+ComparisonOperator -> ">" . 
+ComparisonOperator -> "<" . 
+ComparisonOperator -> ">=" . 
+ComparisonOperator -> "<=" . 
+ComparisonOperator -> "==" . 
+ComparisonOperator -> "!=" . 
