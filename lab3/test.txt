@@ -1,17 +1,14 @@
-int main() {
-  int x = 5;
-  int y = 3;
-  int z = 0;
-  
-  if (x > y) {
-    z = x + y;
-  } else {
-    z = x * y;
-  }
+x = 10;
+y = 20;
+z = y;
 
-  for (int i = 0; i < 10; i = i + 1) {
-    z = z + 1;
+for (i = 0;i<z;i+=1){
+  if(x>y){
+    return x;
   }
-
-  return z;
+  if(x<y){
+    return y;
+  }
 }
+
+return z;

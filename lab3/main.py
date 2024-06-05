@@ -1,17 +1,28 @@
+from lexer import Lexer
+from parse import Parser
+import sys
+
 def main():
-    with open('input.txt', 'r') as file:
-        source_code = file.read()
+    if len(sys.argv) != 2:
+        print("Usage: python main.py <filename>")
+        return
 
-    lexer = Lexer(source_code)
-    tokens = lexer.tokenize()
+    filename = sys.argv[1]
+    
+    try:
+        with open(filename, 'r') as file:
+            code = file.read()
+    except FileNotFoundError:
+        print(f"File not found: {filename}")
+        return
 
-    parser = Parser(tokens)
-    ast = parser.parse()
-
-    llvm_gen = LLVMGenerator()
-    llvm_gen.generate(ast)
-
-    print(llvm_gen.module)
+    lexer = Lexer(code)
+    parser = Parser(lexer)
+    try:
+        program = parser.parse()
+        print(program)
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()

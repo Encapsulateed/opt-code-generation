@@ -1,29 +1,22 @@
-Program -> "int" "main" "(" ")" "{" StatementList "}" . 
-StatementList -> Statement StatementList . 
-StatementList -> . 
-Statement -> Declaration . 
-Statement -> Assignment . 
-Statement -> IfStatement . 
-Statement -> ForStatement . 
-Statement -> ReturnStatement . 
-Declaration -> "int" IDENT "=" Expression ";" . 
-Assignment -> IDENT "=" Expression ";" . 
-IfStatement -> "if" "(" Condition ")" "{" StatementList "}" "else" "{" StatementList "}" . 
-ForStatement -> "for" "(" Declaration Condition ";" Assignment ")" "{" StatementList "}" . 
-ReturnStatement -> "return" Expression ";" . 
-Expression -> Term ExpressionPrime . 
-ExpressionPrime -> "+" Term ExpressionPrime . 
-ExpressionPrime -> "-" Term ExpressionPrime . 
-ExpressionPrime -> "*" Term ExpressionPrime . 
-ExpressionPrime -> "/" Term ExpressionPrime . 
-ExpressionPrime -> . 
-Term -> NUMBER . 
-Term -> IDENT . 
-Term -> "(" Expression ")" . 
-Condition -> Expression ComparisonOperator Expression . 
-ComparisonOperator -> ">" . 
-ComparisonOperator -> "<" . 
-ComparisonOperator -> ">=" . 
-ComparisonOperator -> "<=" . 
-ComparisonOperator -> "==" . 
-ComparisonOperator -> "!=" . 
+program -> statements .
+
+statements -> statement ';' statements | .
+
+statement -> assignment | if_statement | for_statement | return_statement .
+
+assignment -> IDENT '=' id_or_num  .
+
+if_statement -> 'IF' '(' expr ')' '{' statements '}' .
+
+for_statement -> 'FOR' '(' assignment expr expr ')' '{' statements '}' .
+
+return_statement -> 'RETURN' id_or_num .
+
+expr -> id_or_num logic_op id_or_num | id_or_num arithm_op id_or_num '==' id_or_num .
+
+id_or_num -> IDENT | NUMBER
+
+logic_op -> '<' | '>' | '==' | '>=' | '=<' .
+
+arithm_op -> '+' | '-' | '*' | '/' .
+
