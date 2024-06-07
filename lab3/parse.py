@@ -61,10 +61,13 @@ class Parser:
         self.eat('FOR')
         self.eat('LPAREN')
         assignment = self.parse_assignment()
+
         self.eat('SEMICOLON')
         expr1 = self.parse_expr()
         self.eat('SEMICOLON')
+
         expr2 = self.parse_expr()
+      
         self.eat('RPAREN')
         self.eat('LBRACE')
         statements = self.parse_statements()
@@ -110,17 +113,3 @@ class Parser:
             self.error('operator')
         self.eat(self.current_token.type)
         return op
-
-# Example usage
-if __name__ == "__main__":
-    code = """
-    x = 10;
-    IF (x > 5) {
-        FOR(i = 0;i < 2 ;i+=1){}
-        RETURN x;
-    }
-    """
-    lexer = Lexer(code)
-    parser = Parser(lexer)
-    program = parser.parse()
-    print(program)

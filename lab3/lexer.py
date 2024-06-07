@@ -67,14 +67,3 @@ class Lexer:
         except StopIteration:
             return None
 
-# Example usage
-code = """
-x = 10;
-IF (x > 5) {
-    RETURN x;
-}
-"""
-lexer = Lexer(code)
-
-while (token := lexer.next_token()) is not None:
-    print(token)

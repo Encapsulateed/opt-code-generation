@@ -1,14 +1,5 @@
-x = 10;
-y = 20;
-z = y;
+for(j=0;j<2;j+=1){
+  return 2;
 
-for (i = 0;i<z;i+=1){
-  if(x>y){
-    return x;
-  }
-  if(x<y){
-    return y;
-  }
 }
-
-return z;
+  return 1;
