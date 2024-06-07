@@ -106,7 +106,8 @@ class ForStatement:
         with builder.if_then(cond):
             self.statements.codegen(module, builder)
             self.expr2.codegen(module, builder)
-            builder.branch(loop_block)
+            if not builder.block.is_terminated:
+                builder.branch(loop_block)
 
         if not builder.block.is_terminated:
             builder.branch(after_block)
