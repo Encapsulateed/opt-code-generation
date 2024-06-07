@@ -39,7 +39,6 @@ def main():
         # Передаем функцию и builder в codegen
         program.codegen(module, builder)
         
-       # builder.ret_void()
         print(module)
     except Exception as e:
         traceback.print_exc()
