@@ -1,0 +1,6 @@
+/mnt/c/Users/Alex/Desktop/bmstu_labs/opt-code-generation/lab3/CMakeFiles/intrinsics_gen.dir
+/mnt/c/Users/Alex/Desktop/bmstu_labs/opt-code-generation/lab3/CMakeFiles/omp_gen.dir
+/mnt/c/Users/Alex/Desktop/bmstu_labs/opt-code-generation/lab3/CMakeFiles/acc_gen.dir
+/mnt/c/Users/Alex/Desktop/bmstu_labs/opt-code-generation/lab3/CMakeFiles/lab3.dir
+/mnt/c/Users/Alex/Desktop/bmstu_labs/opt-code-generation/lab3/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Alex/Desktop/bmstu_labs/opt-code-generation/lab3/CMakeFiles/rebuild_cache.dir
