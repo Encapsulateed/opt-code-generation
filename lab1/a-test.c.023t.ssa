@@ -1,0 +1,77 @@
+
+;; Function sum (sum, funcdef_no=6, decl_uid=2865, cgraph_uid=7, symbol_order=6)
+
+int sum (int a, int b)
+{
+  int res;
+  int D.2877;
+  int _4;
+
+  <bb 2> :
+  res_3 = a_1(D) + b_2(D);
+  _4 = res_3;
+
+  <bb 3> :
+<L0>:
+  return _4;
+
+}
+
+
+
+;; Function main (main, funcdef_no=7, decl_uid=2868, cgraph_uid=8, symbol_order=7)
+
+int main ()
+{
+  int z;
+  int c;
+  int b;
+  int a;
+  int * arr;
+  int n;
+  int D.2882;
+  long unsigned int _1;
+  int _2;
+  int _3;
+  int _4;
+  int _24;
+
+  <bb 2> :
+  n_6 = 3;
+  arr_7 = 0B;
+  _1 = (long unsigned int) n_6;
+  arr_10 = malloc (_1);
+  a_11 = 5;
+  b_12 = 1;
+  c_13 = 6;
+  _2 = rand ();
+  if (_2 > 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  a_16 = a_11 + b_12;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  a_15 = a_11 - c_13;
+
+  <bb 5> :
+  # a_5 = PHI <a_16(3), a_15(4)>
+  _3 = sum (a_5, b_12);
+  printf ("%d, %d, sum:%d", a_5, b_12, _3);
+  _4 = sum (a_5, b_12);
+  *arr_10 = _4;
+  z_21 = *arr_10;
+  printf ("%d", z_21);
+  free (arr_10);
+  _24 = 0;
+
+  <bb 6> :
+<L3>:
+  return _24;
+
+}
+
+
